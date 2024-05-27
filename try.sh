@@ -1,4 +1,0 @@
-hostname
-ls 
-pwd
-chane
