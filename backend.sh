@@ -39,7 +39,7 @@ status_check
 
     unzip /tmp/backend.zip &>>$log_file
 status_check
-}
+
 
 echo -e "${color} Extract Application Content \e[0m"
 cd /app &>>$log_file
