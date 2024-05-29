@@ -19,7 +19,7 @@ status_check
 
     unzip /tmp/$componant.zip &>>$log_file
 status_check
-}
+
 
 echo -e "${color} Extract Downloaded Application Content \e[0m"
 cd /usr/share/nginx/html &>>$log_file
