@@ -1,3 +1,4 @@
+log_file=/tmp/expense.log
 dnf install nginx -y &>>$log_file
 
 cp expense.conf /etc/nginx/default.d/expense.conf &>>$log_file

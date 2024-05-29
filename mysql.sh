@@ -1,3 +1,4 @@
+log_file=/tmp/expense.log
 dnf module disable mysql -y &>>$log_file
 
 cp mysql.repo /etc/yum.repos.d/mysql.repo &>>$log_file

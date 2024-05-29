@@ -1,3 +1,4 @@
+log_file=/tmp/expense.log
 dnf module disable nodejs -y &>>$log_file
 
 dnf module disable nodejs -y &>>$log_file
