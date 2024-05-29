@@ -34,4 +34,4 @@ echo installing my sqld
 dnf install mysql -y >> /tmp/expense.log
 
 
-mysql -h 172.31.27.95 -uroot -pExpenseApp@1 < /app/schema/backend.sql  >> /tmp/expense.log
+mysql -h mysql.aligntune.online -uroot -pExpenseApp@1 < /app/schema/backend.sql  >> /tmp/expense.log
