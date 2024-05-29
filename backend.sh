@@ -1,4 +1,5 @@
-log_file=/tmp/expense.log
+source common.sh
+$componant=backend
 
 echo -e "${color} Disable NodeJS default Version \e[0m"
 dnf module disable nodejs -y &>>$log_file
@@ -33,13 +34,11 @@ echo -e "${color} Delete old Application Content \e[0m"
 rm -rf /app/* &>>$log_file
 status_check
 
-echo -e "${color} Download Application Content \e[0m"
-curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip &>>$log_file
-status_check
+download_and_Extract
 
 echo -e "${color} Extract Application Content \e[0m"
 cd /app &>>$log_file
-unzip /tmp/backend.zip &>>$log_file
+
 status_check
 
 echo -e "${color} Download NodeJS Dependencies \e[0m"
