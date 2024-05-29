@@ -13,11 +13,11 @@ echo -e "${color} Clean Old Nginx Content \e[0m"
 rm -rf /usr/share/nginx/html/* &>>$log_file
 status_check
 
-    echo -e "${color} Download $componant Application Code \e[0m"
-    curl -o /tmp/$componant.zip https://expense-artifacts.s3.amazonaws.com/$componant.zip &>>$log_file
+    echo -e "${color} Download frontend Application Code \e[0m"
+    curl -o /tmp/frontend.zip https://expense-artifacts.s3.amazonaws.com/frontend.zip &>>$log_file
 status_check
 
-    unzip /tmp/$componant.zip &>>$log_file
+    unzip /tmp/frontend.zip &>>$log_file
 status_check
 
 
