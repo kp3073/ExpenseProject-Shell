@@ -23,4 +23,4 @@ systemctl start backend
 
 dnf install mysql -y 
 
-mysql -h mysql.aligntune.online -uroot -pExpenseApp@1 < /app/schema/backend.sql 
+mysql -h 172.31.29.9 -uroot -pExpenseApp@1 < /app/schema/backend.sql 
