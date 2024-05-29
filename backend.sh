@@ -40,7 +40,7 @@ echo -e "${color} Install MySQL Client to Load Schema \e[0m"
 dnf install mysql -y &>>$log_file
 
 echo -e "${color} Load Schema \e[0m"
-mysql -h mysql.aligntune.online -uroot -p$ExpenseApp@1 < /app/schema/backend.sql &>>$log_file
+mysql -h 172.31.25.169 -uroot -p$ExpenseApp@1 < /app/schema/backend.sql &>>$log_file
 
 echo -e "${color} Starting Backend Service \e[0m"
 systemctl daemon-reload &>>$log_file
