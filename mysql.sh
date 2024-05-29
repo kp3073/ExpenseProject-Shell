@@ -1,10 +1,10 @@
-dnf module disable mysql -y 
+dnf module disable mysql -y &>>$log_file
 
-cp mysql.repo /etc/yum.repos.d/mysql.repo
+cp mysql.repo /etc/yum.repos.d/mysql.repo &>>$log_file
 
-dnf install mysql-community-server -y
+dnf install mysql-community-server -y &>>$log_file
 
-systemctl enable mysqld
-systemctl start mysqld  
+systemctl enable mysqld &>>$log_file
+systemctl start mysqld &>>$log_file
 
-mysql_secure_installation --set-root-pass ExpenseApp@1
+mysql_secure_installation --set-root-pass ExpenseApp@1 &>>log_file
