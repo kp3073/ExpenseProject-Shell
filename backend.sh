@@ -1,12 +1,5 @@
 log_file=/tmp/expense.log
 
-if [ -z "$1" ]; then
-  echo Password Input Missing
-  exit
-fi
-
-MYSQL_ROOT_PASSWORD=$1
-
 echo -e "${color} Disable NodeJS default Version \e[0m"
 dnf module disable nodejs -y &>>$log_file
 status_check
