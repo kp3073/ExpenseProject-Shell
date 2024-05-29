@@ -1,14 +1,6 @@
 log_file=/tmp/expense.log
 
-download_and_Extract(){
 
-    echo -e "${color} Download $componant Application Code \e[0m"
-    curl -o /tmp/$componant.zip https://expense-artifacts.s3.amazonaws.com/$componant.zip &>>$log_file
-status_check
-
-    unzip /tmp/$componant.zip &>>$log_file
-status_check
-}
 
 
 status_check(){

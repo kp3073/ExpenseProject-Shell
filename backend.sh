@@ -34,7 +34,13 @@ echo -e "${color} Delete old Application Content \e[0m"
 rm -rf /app/* &>>$log_file
 status_check
 
-download_and_Extract
+    echo -e "${color} Download $componant Application Code \e[0m"
+    curl -o /tmp/$componant.zip https://expense-artifacts.s3.amazonaws.com/$componant.zip &>>$log_file
+status_check
+
+    unzip /tmp/$componant.zip &>>$log_file
+status_check
+}
 
 echo -e "${color} Extract Application Content \e[0m"
 cd /app &>>$log_file
