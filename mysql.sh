@@ -1,14 +1,10 @@
-echo disable old mysql
-dnf module disable mysql -y >> /tmp/expense.log 
+dnf module disable mysql -y 
 
-echo coping repo file 
-cp mysql.repo /etc/yum.repos.d/mysql.repo >> /tmp/expense.log
+cp mysql.repo /etc/yum.repos.d/mysql.repo
 
-echo Installing MySql
-dnf install mysql-community-server -y >> /tmp/expense.log
+dnf install mysql-community-server -y
 
-echo Starting MySql services
+systemctl enable mysqld
+systemctl start mysqld  
 
-systemctl enable mysqld >> /tmp/expense.log
-systemctl start mysqld  >> /tmp/expense.log
-mysql_secure_installation --set-root-pass ExpenseApp@1 >> /tmp/expense.log
+mysql_secure_installation --set-root-pass ExpenseApp@1

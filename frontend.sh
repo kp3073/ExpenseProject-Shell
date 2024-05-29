@@ -1,21 +1,15 @@
-echo installing Nginx
-dnf install nginx -y  >> /tmp/expense.log
+dnf install nginx -y 
 
-echo Removing Old Nginx Contant
-rm -rf /usr/share/nginx/html/*  >> /tmp/expense.log
+systemctl enable nginx 
+systemctl start nginx 
 
-echo downloading Expense App contant
+rm -rf /usr/share/nginx/html/* 
 
-curl -s -o /tmp/frontend.zip https://expense-artifacts.s3.amazonaws.com/frontend.zip >> /tmp/expense.log
+curl -o /tmp/frontend.zip https://expense-artifacts.s3.amazonaws.com/frontend.zip 
 
-echo coping the contant
-cp expense.conf /etc/nginx/default.d/expense.conf >> /tmp/expense.log
-
-echo unziping contant
 cd /usr/share/nginx/html 
-unzip /tmp/frontend.zip >> /tmp/expense.log
+unzip /tmp/frontend.zip
 
-echo restart Nginx service
-systemctl enable nginx >> /tmp/expense.log
+cp expense.conf etc/nginx/default.d/expense.conf
 
-systemctl restart nginx >> /tmp/expense.log
+systemctl restart nginx
