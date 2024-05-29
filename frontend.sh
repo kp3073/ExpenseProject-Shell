@@ -1,5 +1,5 @@
 source common.sh
-$componant=frontend
+
 
 echo -e "${color} Installing Nginx \e[0m"
 dnf install nginx -y &>>$log_file
